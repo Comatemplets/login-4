@@ -1,0 +1,224 @@
+:root {
+  --main-color: #8ec641;
+  --main-color-sec: #8870e6;
+  --transition-color: #7453f5;
+  --main-transition: 0.5s;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* checkbox button start*/
+.checkbox-buttom {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.checkbox-buttom input {
+  display: none;
+}
+.checkbox-buttom label {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.checkbox-buttom label::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f00c";
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+  background-color: var(--main-color);
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--main-transition);
+  border-radius: 3px;
+}
+.checkbox-buttom input:checked + label::before {
+  opacity: 1;
+  transform: scale(1);
+}
+/* checkbox button end */
+/* start loader  */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: 0.75s;
+  z-index: 10000;
+}
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader::before {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 8px double #eee;
+  border-top-color: var(--main-color);
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+/* End loader  */
+/* formats login page and register page  */
+/* Content-box start */
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+}
+form.form-log-reg {
+  background-color: #f9fff0;
+  padding: 20px;
+  border-radius: 20px;
+  width: 500px;
+  height: 600px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+  z-index: 1;
+  overflow: hidden;
+}
+form.form-log-reg .shap {
+  background-image: url(../img/shap.jpg);
+  width: 100%;
+  height: 100%;
+  opacity: 10%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  z-index: -1;
+}
+form.form-log-reg .button-login {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  top: 25px;
+  left: 25px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 20px;
+}
+form.form-log-reg h1 {
+  font-size: 40px;
+  margin: 0;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+form.form-log-reg h2 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+form.form-log-reg .box-log-reg input {
+  padding: 15px;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  outline: none;
+}
+form.form-log-reg .box-log-reg input::placeholder {
+  color: var(--main-color);
+}
+form.form-log-reg .box-log-reg input:focus::placeholder {
+  opacity: 0;
+  transition: var(--main-transition);
+}
+form.form-log-reg .remember-forget p {
+  font-size: 14px;
+  margin: 0;
+  color: gray;
+}
+form.form-log-reg .remember-forget a {
+  font-size: 14px;
+  color: gray;
+  margin-left: 3px;
+}
+form.form-log-reg .remember-forget a:hover {
+  color: var(--main-color);
+}
+form.form-log-reg input[type="submit"] {
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--main-color);
+  color: white;
+  transition: var(--main-transition);
+}
+form.form-log-reg input[type="submit"]:hover {
+  background-color: #5e9a0c;
+}
+form.form-log-reg .register-to {
+  font-size: 14px;
+  text-align: center;
+}
+form.form-log-reg .register-to a {
+  color: gray;
+}
+form.form-log-reg .register-to a:hover {
+  color: var(--main-color);
+}
+form.form-log-reg .social-list {
+  padding: 0;
+  margin: 0 auto;
+}
+form.form-log-reg .social-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: var(--main-color);
+  transition: var(--main-transition);
+}
+form.form-log-reg .social-list a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+/* content-box end  */
+/* start animation  */
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* End animation  */
